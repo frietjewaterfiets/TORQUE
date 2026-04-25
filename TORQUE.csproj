@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>TORQUE</AssemblyName>
+    <RootNamespace>TORQUE</RootNamespace>
+    <ApplicationIcon>branding\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="installer\tools\**\*.cs" />
+    <EmbeddedResource Remove="installer\tools\**\*" />
+    <None Remove="installer\tools\**\*" />
+    <Page Remove="installer\tools\**\*" />
+    <Resource Remove="installer\tools\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="tools\ffmpeg\bin\ffmpeg.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="tools\ffmpeg\bin\ffprobe.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="tools\ffmpeg\LICENSE.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="tools\ffmpeg\README.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="branding\logo.*;branding\icon.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Docnet.Core" Version="2.6.0" />
+    <PackageReference Include="PdfSharp" Version="6.2.4" />
+  </ItemGroup>
+
+</Project>
+
