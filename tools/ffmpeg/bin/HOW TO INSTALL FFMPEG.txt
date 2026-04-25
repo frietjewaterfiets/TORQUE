@@ -1,0 +1,23 @@
+TORQUE needs FFmpeg to convert audio and video files.
+
+To make the project work:
+
+1. Go to the official FFmpeg download page:
+   https://ffmpeg.org/download.html
+
+2. Under "Windows EXE Files", download a Windows build from one of the linked providers.
+
+3. Extract the downloaded archive.
+
+4. Copy these two files into this folder:
+   tools\ffmpeg\bin\
+
+Required files:
+- ffmpeg.exe
+- ffprobe.exe
+
+Final expected paths:
+- tools\ffmpeg\bin\ffmpeg.exe
+- tools\ffmpeg\bin\ffprobe.exe
+
+After that, TORQUE should be able to build and run with full media conversion support.
