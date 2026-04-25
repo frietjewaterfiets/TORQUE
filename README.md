@@ -12,6 +12,9 @@ Bulk convert and compress images, slice audio files in seconds, and export PDF p
 <br>
 <img width="8000" height="4500" alt="torque2" src="https://github.com/user-attachments/assets/4c1cfca9-a9ae-4948-9845-44c7be0d27c1" />
 
+## Like this project?
+<a href='https://ko-fi.com/I2I81YE93E' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 ## Features
 
 ### Image Tools
@@ -50,3 +53,12 @@ Bulk convert and compress images, slice audio files in seconds, and export PDF p
 - Jump back **home** after export
 - Remove **metadata** from exported files
 - Add a **custom suffix** to files
+
+## Credits
+
+This project uses **FFmpeg** to help power its video, audio, and GIF processing features.
+
+FFmpeg is an open-source multimedia framework for handling video, audio, and other multimedia files and streams.
+
+A big thanks to the FFmpeg project and its contributors.  
+Website: [ffmpeg.org](https://ffmpeg.org)
