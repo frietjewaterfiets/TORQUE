@@ -1,5 +1,9 @@
 # TORQUE
 
+
+<img alt="Static Badge" src="https://img.shields.io/badge/DOWNLOAD%20TORQUE%20INSTALLER-087cd7?style=flat-square&logoColor=%23&link=https%3A%2F%2Fgithub.com%2Ffrietjewaterfiets%2FTORQUE%2Freleases"> `FOR WIN10+`
+
+
 **Quickly crop, slice, and turn your gameplay clips into GIFs.**  
 Bulk convert and compress images, slice audio files in seconds, and export PDF pages separately with ease.
 
