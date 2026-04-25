@@ -1,0 +1,185 @@
+﻿<UserControl x:Class="TORQUE.Controls.CropSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <Grid Background="Transparent"
+          MouseLeftButtonDown="RootGrid_MouseLeftButtonDown"
+          MouseLeftButtonUp="RootGrid_MouseLeftButtonUp"
+          MouseMove="RootGrid_MouseMove"
+          LostMouseCapture="RootGrid_LostMouseCapture"
+          SizeChanged="RootGrid_SizeChanged">
+        <Canvas ClipToBounds="True">
+            <Rectangle x:Name="TopMask"
+                       Fill="#A61A1A1A" />
+            <Rectangle x:Name="LeftMask"
+                       Fill="#A61A1A1A" />
+            <Rectangle x:Name="RightMask"
+                       Fill="#A61A1A1A" />
+            <Rectangle x:Name="BottomMask"
+                       Fill="#A61A1A1A" />
+
+            <Thumb x:Name="SelectionThumb"
+                   Cursor="SizeAll"
+                   DragDelta="SelectionThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Border Background="#01000000" />
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Border x:Name="SelectionBorder"
+                    Background="#12000000"
+                    BorderBrush="White"
+                    BorderThickness="2"
+                    IsHitTestVisible="False" />
+
+            <Thumb x:Name="LeftThumb"
+                   Width="10"
+                   Cursor="SizeWE"
+                   DragDelta="LeftThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid Background="Transparent">
+                            <Border Width="4"
+                                    Margin="0,26"
+                                    HorizontalAlignment="Center"
+                                    Background="White"
+                                    CornerRadius="2" />
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Thumb x:Name="RightThumb"
+                   Width="10"
+                   Cursor="SizeWE"
+                   DragDelta="RightThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid Background="Transparent">
+                            <Border Width="4"
+                                    Margin="0,26"
+                                    HorizontalAlignment="Center"
+                                    Background="White"
+                                    CornerRadius="2" />
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Thumb x:Name="TopThumb"
+                   Height="10"
+                   Cursor="SizeNS"
+                   DragDelta="TopThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid Background="Transparent">
+                            <Border Height="4"
+                                    Margin="26,0"
+                                    VerticalAlignment="Center"
+                                    Background="White"
+                                    CornerRadius="2" />
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Thumb x:Name="BottomThumb"
+                   Height="10"
+                   Cursor="SizeNS"
+                   DragDelta="BottomThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid Background="Transparent">
+                            <Border Height="4"
+                                    Margin="26,0"
+                                    VerticalAlignment="Center"
+                                    Background="White"
+                                    CornerRadius="2" />
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Thumb x:Name="TopLeftThumb"
+                   Width="16"
+                   Height="16"
+                   Cursor="SizeNWSE"
+                   DragDelta="TopLeftThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid Background="Transparent">
+                            <Border Width="10"
+                                    Height="10"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Background="White"
+                                    CornerRadius="3" />
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Thumb x:Name="TopRightThumb"
+                   Width="16"
+                   Height="16"
+                   Cursor="SizeNESW"
+                   DragDelta="TopRightThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid Background="Transparent">
+                            <Border Width="10"
+                                    Height="10"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Background="White"
+                                    CornerRadius="3" />
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Thumb x:Name="BottomLeftThumb"
+                   Width="16"
+                   Height="16"
+                   Cursor="SizeNESW"
+                   DragDelta="BottomLeftThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid Background="Transparent">
+                            <Border Width="10"
+                                    Height="10"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Background="White"
+                                    CornerRadius="3" />
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Thumb x:Name="BottomRightThumb"
+                   Width="16"
+                   Height="16"
+                   Cursor="SizeNWSE"
+                   DragDelta="BottomRightThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid Background="Transparent">
+                            <Border Width="10"
+                                    Height="10"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Background="White"
+                                    CornerRadius="3" />
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+        </Canvas>
+    </Grid>
+</UserControl>
+

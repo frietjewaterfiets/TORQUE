@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="TORQUE.Controls.TrimSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <Grid Background="Transparent"
+          PreviewMouseLeftButtonDown="RootGrid_MouseLeftButtonDown"
+          PreviewMouseLeftButtonUp="RootGrid_MouseLeftButtonUp"
+          PreviewMouseRightButtonDown="RootGrid_MouseRightButtonDown"
+          PreviewMouseRightButtonUp="RootGrid_MouseRightButtonUp"
+          MouseMove="RootGrid_MouseMove"
+          LostMouseCapture="RootGrid_LostMouseCapture"
+          SizeChanged="RootGrid_SizeChanged">
+        <Canvas ClipToBounds="True">
+            <Rectangle x:Name="LeftMask"
+                       Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Canvas}}"
+                       Fill="#A61A1A1A" />
+            <Border x:Name="SelectionSurface"
+                    Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Canvas}}"
+                    Background="#10000000"
+                    BorderBrush="Transparent"
+                    BorderThickness="0"
+                    IsHitTestVisible="False" />
+            <Rectangle x:Name="SelectionTopLine"
+                       Height="2"
+                       Fill="White"
+                       IsHitTestVisible="False" />
+            <Rectangle x:Name="SelectionBottomLine"
+                       Height="2"
+                       Fill="White"
+                       IsHitTestVisible="False" />
+            <Rectangle x:Name="RightMask"
+                       Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Canvas}}"
+                       Fill="#A61A1A1A" />
+
+            <Thumb x:Name="LeftThumb"
+                   Width="26"
+                   Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Canvas}}"
+                   DragDelta="LeftThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid Background="Transparent">
+                            <Border Width="6"
+                                    HorizontalAlignment="Center"
+                                    Background="White"
+                                    CornerRadius="3" />
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Thumb x:Name="RightThumb"
+                   Width="26"
+                   Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Canvas}}"
+                   DragDelta="RightThumb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid Background="Transparent">
+                            <Border Width="6"
+                                    HorizontalAlignment="Center"
+                                    Background="White"
+                                    CornerRadius="3" />
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Rectangle x:Name="PlayheadIndicator"
+                       Width="3"
+                       RadiusX="2"
+                       RadiusY="2"
+                       Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Canvas}}"
+                       Fill="{DynamicResource PrimaryTextBrush}"
+                       IsHitTestVisible="False" />
+        </Canvas>
+    </Grid>
+</UserControl>
+
